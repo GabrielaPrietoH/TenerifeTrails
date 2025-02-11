@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Los-Senderos",
+    "slug": "Los-Senderos",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/img/logo-senderos.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/img/logo-senderos.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Necesitamos acceso a tu galería para que puedas cambiar tu avatar."
+      }
+    },
+    "android": {
+      "package": "com.gabip.los_senderos",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "config": {
+        "android": {
+          "requestLegacyExternalStorage": true
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
+
