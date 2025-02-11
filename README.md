@@ -1,7 +1,5 @@
 # Proyecto Tenerife Trails
 
-# Tenerife Trails
-
 ![License](https://img.shields.io/badge/license-0BSD-blue)
 
 
