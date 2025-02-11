@@ -2,6 +2,8 @@
 
 ![License](https://img.shields.io/badge/license-0BSD-blue)
 
+![logo-senderos](https://github.com/user-attachments/assets/574d1c3a-9b40-4501-85d9-c13fb8ef7db6)
+
 
 **Tenerife Trails** es una aplicación móvil desarrollada en React Native utilizando Expo. Esta aplicación está diseñada para facilitar la exploración de rutas de senderismo y actividades al aire libre, pudiendo añadir rutas nuevas y comentar aquellas que se han realizado con anteridad. Esta aplicación busca ser una herramienta de uso para los amantes de los senderos que quieren probar rutas difertentes.
 
