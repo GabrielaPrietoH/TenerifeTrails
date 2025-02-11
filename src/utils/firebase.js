@@ -7,7 +7,7 @@ import { getFirestore } from 'firebase/firestore';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCOWvkK3-v7b4lkdT7PIgKtPD8RFUqWuvs",
+  apiKey: "Tu-API-Key",
   authDomain: "tenerife-trails.firebaseapp.com",
   projectId: "tenerife-trails",
   storageBucket: "tenerife-trails.firebasestorage.app",
