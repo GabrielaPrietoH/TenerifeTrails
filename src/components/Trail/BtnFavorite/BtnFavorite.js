@@ -52,7 +52,7 @@ export function BtnFavorite(props) {
       const idFavorite = uuid();
       const data = {
         id: idFavorite,
-        idRestaurant: idTrail,
+        idTrail: idTrail,
         idUser: auth.currentUser.uid,
       };
 

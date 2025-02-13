@@ -44,7 +44,7 @@ export function BtnReviewForm(props) {
     };
 
     const goToAddReview = () => {
-      navigation.navigate(screen.restaurant.addReviewTrail, {idTrail});
+      navigation.navigate(screen.trail.addReviewTrail, {idTrail});
     };
 
     if(hasLogged && hasReview) {

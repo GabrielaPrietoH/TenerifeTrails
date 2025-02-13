@@ -32,7 +32,7 @@ export function RankingScreen() {
         <TrailsRanking
           key={index}
           index={index}
-          restaurant={trail.data()}
+          trail={trail.data()}
         />
       ))}
     </ScrollView>

@@ -64,7 +64,7 @@ export function UploadImageForm(props) {
 
       // Subir el blob a Firebase Storage
       const storage = getStorage(appId);
-      const storageRef = ref(storage, `restaurants/${uuid()}`);
+      const storageRef = ref(storage, `trails/${uuid()}`);
       await uploadBytes(storageRef, blob);
 
       const imageUrl = await getDownloadURL(storageRef);
