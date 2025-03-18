@@ -42,4 +42,11 @@ Antes de comenzar, asegúrate de tener instalado:
    git clone https://github.com/tu-usuario/los-senderos.git
    cd los-senderos
 
+## Capturas de Pantalla
 
+Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamiento:
+
+<p align="center">
+  <img src="assets/images/Cap_1.png" alt="Captura 1" width="300" />
+  <img src="assets/images/Cap_2.png" alt="Captura 2" width="300" />
+</p>
