@@ -12,7 +12,7 @@ import {
 import { size, map } from 'lodash';
 import { db } from '../utils';
 import { Loading } from '../components/Shared';
-import { UserNotLogged, NotFoundTrails, TrailsFavorite } from '../components/Favorites';
+import { UserNotLogged, NotFoundTrails, TrailFavorite } from '../components/Favorites';
 
 export function FavoritesScreen() {
   const [hasLogged, setHasLogged] = useState(null);
@@ -60,7 +60,7 @@ export function FavoritesScreen() {
   return (
     <ScrollView>
       {map(trails, (trail) => (
-        <TrailsFavorite key={trail.id} trail={trail} />
+        <TrailFavorite key={trail.id} trail={trail} />
       ))}
     </ScrollView>
   );

@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Los-Senderos",
-    "slug": "Los-Senderos",
+    "name": "Tenerife Trails",
+    "slug": "Tenerife Trails",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/img/logo-senderos.png",
+    "icon": "./assets/img/logo_cuadrado.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/img/logo-senderos.png",
+      "image": "./assets/img/logo_cuadrado.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,7 +21,7 @@
     "android": {
       "package": "com.gabip.los_senderos",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo_cuadrado.png",
         "backgroundColor": "#ffffff"
       },
       "permissions": [
@@ -29,8 +29,8 @@
         "WRITE_EXTERNAL_STORAGE"
       ],
       "config": {
-        "android": {
-          "requestLegacyExternalStorage": true
+        "googleMaps": {
+          "apiKey": "AIzaSyDCa5ywEdMZlg10sgNAiz5CHooI5GUKovA"
         }
       }
     },
@@ -39,4 +39,3 @@
     }
   }
 }
-

@@ -4,6 +4,7 @@ import { TrailsScreen } from "../screens/Trails/TrailsScreen"
 import { AddTrailScreen } from "../screens/Trails/AddTrailScreen";
 import { TrailScreen } from '../screens/Trails/TrailScreen';
 import { AddReviewTrailScreen } from '../screens/Trails/AddReviewTrailScreen';
+import { ReviewScreen } from '../screens/Trails/ReviewsScreen';
 import { screen } from "../utils";
 
 const Stack = createNativeStackNavigator();
@@ -31,6 +32,11 @@ export function TrailStack() {
         component={AddReviewTrailScreen}
         options= {{title: "Nueva Opinión"}} 
         />
+       <Stack.Screen
+        name={screen.trail.reviews} 
+        component={ReviewScreen}
+        options={{ title: "Comentarios" }}
+      />
         </Stack.Navigator>
    )
 }

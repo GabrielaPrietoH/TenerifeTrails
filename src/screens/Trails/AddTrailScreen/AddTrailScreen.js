@@ -8,6 +8,7 @@ import { db } from '../../../utils';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 import { initialValues, validationSchema } from './AddTrailScreen.data';
+
 import { styles } from './AddTrailScreen.styles';
 
 export function AddTrailScreen() {

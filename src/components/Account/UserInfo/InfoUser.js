@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Alert, Platform } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
+import * as FileSystem from 'expo-file-system';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { styles } from './infoUser.styles';
@@ -12,22 +13,22 @@ export function InfoUser(props) {
   const { uid, photoURL, displayName, email } = getAuth().currentUser;
   const [avatar, setAvatar] = useState(photoURL);
 
-  const changeAvatar = async () => {
-    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    console.log("Estado del permiso:", status);
-
-    if (status !== 'granted') {
-      Alert.alert("Permisos necesarios", "Se necesita acceso a la galería para cambiar el avatar.");
-      return;
+  const openGallery = async () => {
+    // Verificar y solicitar permisos en API 30+
+    if (Platform.OS === 'android' && Platform.Version >= 30) {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert("Permisos necesarios", "Se necesita acceso a la galería para cambiar el avatar.");
+        return;
+      }
     }
 
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaType.Images,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
+      quality: 1,
     });
-
-    console.log("Resultado de la selección de imagen:", result);
 
     if (!result.canceled && result.assets && result.assets[0] && result.assets[0].uri) {
       console.log("URI de la imagen seleccionada:", result.assets[0].uri);
@@ -42,15 +43,35 @@ export function InfoUser(props) {
     setLoading(true);
 
     try {
-      const response = await fetch(uri);
-      const blob = await response.blob();
+      // Verificar si el archivo existe
+      const fileInfo = await FileSystem.getInfoAsync(uri);
+      if (!fileInfo.exists) {
+        throw new Error("El archivo no existe.");
+      }
 
+      // Convertir la URI en un blob
+      const blob = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+          resolve(xhr.response);
+        };
+        xhr.onerror = () => {
+          reject(new TypeError("Network request failed"));
+        };
+        xhr.responseType = "blob";
+        xhr.open("GET", uri, true);
+        xhr.send(null);
+      });
+
+      // Subir el blob a Firebase Storage
       const storage = getStorage(appId);
       const storageRef = ref(storage, `avatar/${uid}`);
       await uploadBytes(storageRef, blob);
 
       const imageUrl = await getDownloadURL(storageRef);
+      console.log("URL de la imagen subida:", imageUrl);
 
+      // Actualizar el perfil del usuario con la nueva URL del avatar
       const auth = getAuth();
       await updateProfile(auth.currentUser, { photoURL: imageUrl });
 
@@ -72,7 +93,7 @@ export function InfoUser(props) {
         icon={{ type: "material", name: "person" }}
         source={{ uri: avatar }}
       >
-        <Avatar.Accessory size={24} onPress={changeAvatar} />
+        <Avatar.Accessory size={24} onPress={openGallery} />
       </Avatar>
 
       <View style={styles.content}>

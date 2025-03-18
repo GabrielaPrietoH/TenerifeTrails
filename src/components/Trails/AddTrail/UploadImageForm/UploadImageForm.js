@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, ScrollView } from 'react-native';
+import { Alert, ScrollView, Platform } from 'react-native';
 import { Icon, Avatar, Text } from 'react-native-elements';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
@@ -14,12 +14,14 @@ export function UploadImageForm(props) {
   const { formik } = props;
   const [isLoading, setIsLoading] = useState(false);
 
-
   const openGallery = async () => {
-    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (status !== 'granted') {
-      Alert.alert("Permisos necesarios", "Se necesita acceso a la galería para subir imágenes.");
-      return;
+    // Verificar y solicitar permisos en API 30+
+    if (Platform.OS === 'android' && Platform.Version >= 30) {
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert("Permisos necesarios", "Se necesita acceso a la galería para subir imágenes.");
+        return;
+      }
     }
 
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -29,9 +31,8 @@ export function UploadImageForm(props) {
       quality: 1,
     });
 
-
     if (!result.canceled && result.assets && result.assets[0] && result.assets[0].uri) {
-      console.log("URI de la imagen seleccionada:", result.assets[0].uri); 
+      console.log("URI de la imagen seleccionada:", result.assets[0].uri);
       uploadImage(result.assets[0].uri);
     } else {
       console.error("No se pudo obtener la URI de la imagen seleccionada.");

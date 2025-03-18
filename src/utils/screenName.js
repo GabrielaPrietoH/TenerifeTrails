@@ -3,6 +3,7 @@ const trailStack = {
     trails: "Trails",
     addTrail: "AddTrail",
     trail: "Trail",
+    reviews: "Reviews",
     addReviewTrail: "AddReviewTrail"
 };
 
