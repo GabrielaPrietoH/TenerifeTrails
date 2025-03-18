@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'Los-Senderos'
+rootProject.name = 'Tenerife Trails'
 
 dependencyResolutionManagement {
   versionCatalogs {
