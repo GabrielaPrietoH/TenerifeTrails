@@ -46,3 +46,27 @@ Antes de comenzar, asegúrate de tener instalado:
 
 Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamiento:
 
+<p align="center">
+  <img src="assets/imgToGit/Cap_1.png" alt="Imagen 1" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_2.png" alt="Imagen 2" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_3.png" alt="Imagen 3" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_4.png" alt="Imagen 1" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_5.png" alt="Imagen 2" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_6.png" alt="Imagen 3" width="150" style="padding: 2px;">
+</p>
+<p align="center">
+  <img src="assets/imgToGit/Cap_7.png" alt="Imagen 1" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_8.png" alt="Imagen 2" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_9.png" alt="Imagen 3" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_10.png" alt="Imagen 1" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_11.png" alt="Imagen 2" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_12.png" alt="Imagen 3" width="150" style="padding: 2px;">
+</p>
+<p align="center">
+  <img src="assets/imgToGit/Cap_13.png" alt="Imagen 1" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_14.png" alt="Imagen 2" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_15.png" alt="Imagen 3" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_16.png" alt="Imagen 1" width="150" style="padding: 2px;">
+  <img src="assets/imgToGit/Cap_17.png" alt="Imagen 2" width="150" style="padding: 2px;">
+</p>
+
