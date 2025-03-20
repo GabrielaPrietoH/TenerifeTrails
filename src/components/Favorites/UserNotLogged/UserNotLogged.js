@@ -8,9 +8,12 @@ import { styles } from './UserNotLogged.styles';
 export function UserNotLogged() {
   const navigation = useNavigation();
 
-  const goToLogin = () =>{
-    navigation.navigate(screen.account.tag, {
-      screen: screen.account.login,
+  const goToLogin = () => {
+    navigation.navigate({
+      name: screen.account.tab,
+      params: {
+        screen: screen.account.login,
+      },
     });
   };
 
@@ -28,6 +31,7 @@ export function UserNotLogged() {
         title="Ir al login" 
         containerStyle={styles.btnContainer}  
         buttonStyle={styles.btn}
+        onPress={goToLogin}
       />
     </View>
   );
